@@ -34,7 +34,6 @@ def check_resources(coffee_type):
             water -= espresso["water"]
             milk -= espresso["milk"]
             coffee -= espresso["coffee"]
-            revenue += espresso["unit_price"]
             return True
         else:
             return False
@@ -43,7 +42,6 @@ def check_resources(coffee_type):
             water -= latte["water"]
             milk -= latte["milk"]
             coffee -= latte["coffee"]
-            revenue += latte["unit_price"]
             return True
         else:
             return False
@@ -52,7 +50,6 @@ def check_resources(coffee_type):
             water -= cappuccino["water"]
             milk -= cappuccino["milk"]
             coffee -= cappuccino["coffee"]
-            revenue += cappuccino["unit_price"]
             return True
         else:
             return False
