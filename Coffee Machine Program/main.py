@@ -63,7 +63,7 @@ def check_resources(coffee_type):
 # function for displaying the resources report with revenue
 def display_report():
     print(f"""
-    ------ Report of CoffeeX ------
+    ------ Report of CoffeeManiac ------
     
     Water   :   {water} ml
     Milk    :   {milk} ml
@@ -116,7 +116,7 @@ def make_coffee(coffee_type, cash):
 
 while True:
     print("""
-    ----- Welcome to CoffeeX -----
+    ----- Welcome to CoffeeManiac -----
     
     1. Espresso
     2. Latte
