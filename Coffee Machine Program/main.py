@@ -112,47 +112,51 @@ def make_coffee(coffee_type, cash):
 
 
 while True:
-    print("""
-    ----- Welcome to CoffeeManiac -----
+    try:
+        print("""
+        ----- Welcome to CoffeeManiac -----
+        
+        1. Espresso
+        2. Latte
+        3. Cappuccino
+        4. Report
+        5. Exit
+    """)
+        user_choice = int(input("Enter your choice: "))
     
-    1. Espresso
-    2. Latte
-    3. Cappuccino
-    4. Report
-    5. Exit
-""")
-    user_choice = int(input("Enter your choice: "))
-
-    if user_choice == 1:
-        amount = float(input("Enter the cash amount: "))
-        if make_transaction("espresso", amount):
-            if check_resources("espresso"):
-                make_coffee("espresso", amount)
+        if user_choice == 1:
+            amount = float(input("Enter the cash amount: "))
+            if make_transaction("espresso", amount):
+                if check_resources("espresso"):
+                    make_coffee("espresso", amount)
+                else:
+                    print("Sorry, there are not enough resources to make the coffee!")
             else:
-                print("Sorry, there are not enough resources to make the coffee!")
-        else:
-            print("Sorry, you entered short amount.")
-    elif user_choice == 2:
-        amount = float(input("Enter the cash amount: "))
-        if make_transaction("latte", amount):
-            if check_resources("latte"):
-                make_coffee("latte", amount)
+                print("Sorry, you entered short amount.")
+        elif user_choice == 2:
+            amount = float(input("Enter the cash amount: "))
+            if make_transaction("latte", amount):
+                if check_resources("latte"):
+                    make_coffee("latte", amount)
+                else:
+                    print("Sorry, there are not enough resources to make the coffee!")
             else:
-                print("Sorry, there are not enough resources to make the coffee!")
-        else:
-            print("Sorry, you entered short amount.")
-    elif user_choice == 3:
-        amount = float(input("Enter the cash amount: "))
-        if make_transaction("cappuccino", amount):
-            if check_resources("cappuccino"):
-                make_coffee("cappuccino", amount)
+                print("Sorry, you entered short amount.")
+        elif user_choice == 3:
+            amount = float(input("Enter the cash amount: "))
+            if make_transaction("cappuccino", amount):
+                if check_resources("cappuccino"):
+                    make_coffee("cappuccino", amount)
+                else:
+                    print("Sorry, there are not enough resources to make the coffee!")
             else:
-                print("Sorry, there are not enough resources to make the coffee!")
+                print("Sorry, you entered short amount.")
+        elif user_choice == 4:
+            display_report()
+        elif user_choice == 5:
+            break
         else:
-            print("Sorry, you entered short amount.")
-    elif user_choice == 4:
-        display_report()
-    elif user_choice == 5:
-        break
-    else:
-        print("Invalid command!")
+            print("Invalid command!")
+    except ValueError:
+        print("Invalid Input")
+        continue
